@@ -1,9 +1,13 @@
 pipeline {
     agent any 
+    tools {
+        maven 'Maven'
+    }
     stages {
-        stage('Build') { 
+        stage('Initialize') { 
             steps {
-               sh "whoami"
+                echo "PATH = ${PATH}"
+                echo "M2_HOME = ${M2_HOM}"
             }
         }
     }
