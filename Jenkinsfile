@@ -4,10 +4,9 @@ pipeline {
         maven 'Maven'
     }
     stages {
-        stage('Initialize') { 
+        stage('build') { 
             steps {
-                echo "PATH = ${PATH}"
-                echo "M2_HOME = ${M2_HOM}"
+                sh 'mvn clean package'
             }
         }
     }
